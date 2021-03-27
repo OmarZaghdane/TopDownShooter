@@ -5,6 +5,14 @@ using UnityEngine;
 public class ZombieStooock : MonoBehaviour
 {
    public GameObject[] Zombies;
+    public AudioSource Boum;
+    public ParticleSystem BoumEffect;
+
+
+    private void Awake()
+    {
+        BoumEffect.Stop();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +24,10 @@ public class ZombieStooock : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
+            Boum.Play();
+            BoumEffect.Play();
             Bomb();
+            
         }
     }
 
@@ -27,6 +38,7 @@ public class ZombieStooock : MonoBehaviour
         foreach (GameObject z in Zombies)
         {
             Destroy(z);
+            
         }
     }
 
