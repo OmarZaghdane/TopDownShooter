@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!114 &1777226601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,4 +175,7 @@ MonoBehaviour:
   disableOnDeath:
   - {fileID: 1777226605}
   - {fileID: 7215084446639381233}
-  health: 5
+  Maxhealth: 5
+  health: 0
+  HealthCirce: {fileID: 0}
+  isPlayer: 0
