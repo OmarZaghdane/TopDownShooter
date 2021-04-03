@@ -13,6 +13,7 @@ public class Zombie : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Player").transform;
+        Speed = Random.Range(2, 6);
     }
 
     // Update is called once per frame

@@ -5,10 +5,11 @@ using UnityEngine;
 public class zombieSpawner : MonoBehaviour
 {
     public GameObject ZombieePrefab;
+    public int waveSize;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", .5f, 2);
+        InvokeRepeating("SpawnMany", .5f, 5);
     }
 
     // Update is called once per frame
@@ -25,6 +26,15 @@ public class zombieSpawner : MonoBehaviour
         pos.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
         pos.z = center.z;
         return pos;
+    }
+
+    void SpawnMany()
+    {
+        for (int i = 0; i < waveSize; i++)
+        {
+            Spawn();
+        }
+        waveSize += 2;
     }
 
     void Spawn()

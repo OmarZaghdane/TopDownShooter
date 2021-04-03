@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class HealthManager : MonoBehaviour
 
     private void Start()
     {
+        if (!isPlayer) Maxhealth = Random.Range(1, 5);
         health = Maxhealth;
     }
 
@@ -32,7 +34,8 @@ public class HealthManager : MonoBehaviour
     {
         foreach (Behaviour behaviour in disableOnDeath)
         {
-            behaviour.enabled = false;
+            //behaviour.enabled = false;
+            Destroy(gameObject);
         }
         Debug.Log("dead " + gameObject.name);
     }
